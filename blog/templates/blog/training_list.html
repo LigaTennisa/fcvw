@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список записей на тренировки</title>
+</head>
+<body>
+    <h1>Список записей на тренировки</h1>
+    <ul>
+        {% for reservation in reservations %}
+            <li>{{ reservation.user.username }} - Корт: {{ reservation.court }}, Дата: {{ reservation.date }}, Время: {{ reservation.time }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

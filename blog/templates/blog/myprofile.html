@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Личная страница</title>
+</head>
+<body>
+    <div>
+        <h1>Личная страница пользователя</h1>
+        <div>
+            <!-- Боковая панель -->
+            <div style="float: left; width: 30%;">
+                <ul>
+                    <li><a href="#profile">Профиль</a></li>
+                    <li><a href="/training">Запрос на игру</a></li> 
+                </ul>
+            </div>
+            <div style="float: left; width: 70%;">
+                <!-- Содержимое разделов -->
+                <div id="profile">
+                    <h2>Профиль</h2>
+                    <img src=" https://shapka-youtube.ru/wp-content/uploads/2020/08/man-silhouette.jpg" alt="Avatar" width=300px hight= 200px>
+                    
+                    <form action="/save-profile" method="post">
+                        <!-- Поля для редактирования данных пользователя -->
+                        <label for="username">Имя пользователя:</label>
+                        <input type="text" id="username" name="username" value="{{ user.username }}"><br><br>
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" value="{{ user.email }}"><br><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock content %}
